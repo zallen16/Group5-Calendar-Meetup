@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const {CronJob} = require('cron');
 
 const profileSchema = new Schema({
   name: {
@@ -19,6 +20,26 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  friendList: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Profile'
+    }
+  ],
+  eventList: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Event'
+    }
+  ],
+  subscription: {
+    type: Object,
+  },
+  notificationList: [
+    {
+      type: CronJob
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
