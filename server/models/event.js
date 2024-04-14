@@ -22,11 +22,17 @@ const EventSchema = new Schema({
         type: Boolean,
     },
     creatorID:{
-      type:ObjectID,  
+        ref:'Profile',
+      type:Schema.Types.ObjectID ,
+      required:true
     },
     privacySetting:{
         type:String,
-    }
+    },
+    guestList:[{
+        ref:'Profile',
+        type:Schema.Types.ObjectID,
+    }]
 
 });
 
