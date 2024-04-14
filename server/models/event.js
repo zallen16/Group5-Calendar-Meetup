@@ -23,7 +23,6 @@ const EventSchema = new Schema({
     privacySetting:{
         type: String,
     }
-
 });
 
 const Event = model('Event',EventSchema);
