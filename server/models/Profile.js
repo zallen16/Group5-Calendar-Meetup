@@ -37,7 +37,7 @@ const profileSchema = new Schema({
   },
   notificationList: [
     {
-      type: CronJob
+      type: String,
     }
   ]
 });

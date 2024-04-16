@@ -2,29 +2,29 @@ const { Schema, model } = require('mongoose');
 
 
 const EventSchema = new Schema({
-    eventName : {
+    eventName: {
         type: String,
-        required:[true,"Please enter Event Name"],
+        required:[true, "Please enter Event Name"],
     },
     eventNotes: {
         type: String,
     },
-    eventStart : {
+    eventStart: {
         type: Date,
-        required: [true,"Please enter event start date"],
+        required: [true, "Please enter event start date"],
     },
-    eventEnd:{
+    eventEnd: {
         type: Date,
-        required: [true,"Please enter Event end date"]
+        required: [true, "Please enter Event end date"]
     },
-    enableNotifications :{
+    enableNotifications: {
         type: Boolean,
     },
-    privacySetting:{
+    privacySetting: {
         type: String,
     }
 });
 
-const Event = model('Event',EventSchema);
+const Event = model('Event', EventSchema);
 
 module.exports = Event;

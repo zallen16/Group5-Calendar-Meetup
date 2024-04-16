@@ -8,15 +8,14 @@ const typeDefs = `
   }
 
   type Event{
-    _id:Id
+    _id: ID
     eventName: String
-    eventNotes: string
-    eventStart: Date
-    eventEnd: Date
-    enableNotification:Boolean
+    eventNotes: String
+    eventStart: String
+    eventEnd: String
+    enableNotification: Boolean
     creatorId: ID!
-    privacySetting:String
-
+    privacySetting: String
   }
 
   type Auth {
@@ -28,15 +27,32 @@ const typeDefs = `
     allprofiles: [Profile]!
     profile: Profile
     allevents: [Event]
-    event(ID):Event
+    event(eventId: ID): Event
   }
 
   type Mutation {
-    addProfile(name: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    addEvent(eventName:String!,eventNotes: String,eventStart:Date!,evenEnd:Date,enableNotification:Bollean,privacySettings:String):Event
-    addGuestList(eventId:ID,[guestlist]):Event
-    deleteEvent(eventId:Id):Event
+    addProfile(
+      name: String!, 
+      email: String!, 
+      password: String!
+    ): Auth
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
+    addEvent(
+      eventName: String!,
+      eventNotes: String,
+      eventStart: String!,
+      evenEnd: String,
+      enableNotification: Boolean,
+      privacySettings: String
+    ): Event
+    addGuestList(
+      eventId: ID, 
+      guestList: [String]
+    ): Event
+    deleteEvent(eventId: ID): Event
 
     removeProfile(profileId: ID!): Profile
   }
