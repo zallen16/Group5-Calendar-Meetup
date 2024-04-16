@@ -8,7 +8,6 @@ const EventSchema = new Schema({
     },
     eventNotes: {
         type: String,
-
     },
     eventStart : {
         type: Date,
@@ -21,19 +20,9 @@ const EventSchema = new Schema({
     enableNotifications :{
         type: Boolean,
     },
-    creatorID:{
-        ref:'Profile',
-      type:Schema.Types.ObjectID ,
-      required:true
-    },
     privacySetting:{
-        type:String,
-    },
-    guestList:[{
-        ref:'Profile',
-        type:Schema.Types.ObjectID,
-    }]
-
+        type: String,
+    }
 });
 
 const Event = model('Event',EventSchema);
