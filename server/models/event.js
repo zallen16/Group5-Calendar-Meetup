@@ -8,7 +8,6 @@ const EventSchema = new Schema({
     },
     eventNotes: {
         type: String,
-
     },
     eventStart : {
         type: Date,
@@ -21,13 +20,9 @@ const EventSchema = new Schema({
     enableNotifications :{
         type: Boolean,
     },
-    creatorID:{
-      type:ObjectID,  
-    },
     privacySetting:{
-        type:String,
+        type: String,
     }
-
 });
 
 const Event = model('Event',EventSchema);
