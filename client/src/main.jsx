@@ -5,7 +5,9 @@ import './index.css';
 
 import App from './App.jsx';
 import Home from './pages/home.jsx';
-import ErrorPage from './pages/error';
+import ErrorPage from './pages/error.jsx';
+import Login from './pages/login.jsx';
+import './index.css'
 
 const router = createBrowserRouter([
   {
