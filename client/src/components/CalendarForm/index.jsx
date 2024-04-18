@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 const localizer = dayjsLocalizer(dayjs)
 
 const MyCalendar = (props) => (
-  <div>
+  <div className='flex-box'>
     <Calendar
       localizer={localizer}
       events={props.myEventsList}
