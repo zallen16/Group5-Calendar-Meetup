@@ -13,8 +13,7 @@ const typeDefs = `
     eventNotes: String
     eventStart: String
     eventEnd: String
-    enableNotification: Boolean
-    creatorId: ID!
+    enableNotifications: Boolean
     privacySetting: String
   }
 
@@ -44,13 +43,9 @@ const typeDefs = `
       eventName: String!,
       eventNotes: String,
       eventStart: String!,
-      evenEnd: String,
-      enableNotification: Boolean,
-      privacySettings: String
-    ): Event
-    addGuestList(
-      eventId: ID, 
-      guestList: [String]
+      eventEnd: String,
+      enableNotifications: Boolean,
+      privacySetting: String
     ): Event
     deleteEvent(eventId: ID): Event
 
