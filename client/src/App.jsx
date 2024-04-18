@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import './App.css'
 
