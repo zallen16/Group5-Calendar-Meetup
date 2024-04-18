@@ -1,6 +1,6 @@
 const Login =()=>(
 <div>
-      <h1>Login</h1>
+      <h1 className=''>Login</h1>
       <form>
         <input
           Label="Email"
