@@ -4,17 +4,11 @@
     --primary: #232F3E;
     --light: #fafafa;
     --dark: #272f32;
-    --spacing-one: calc(1rem * 0.5);
-    --spacing-two: calc(1rem);
 }
 
 .calender-container {
-    width: 85%;
+    width: 50%;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.flex-box {
-    display: flex;
 }
