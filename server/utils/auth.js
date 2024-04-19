@@ -1,8 +1,12 @@
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
-require('dotenv').config()
+
+const path = require('path');
+require('dotenv').config({path:path.resolve(__dirname,'../../.env')});
 
 const secret = process.env.JWT_SECRET;
+
+
 const expiration = '2h';
 
 module.exports = {
@@ -23,8 +27,8 @@ module.exports = {
     }
 
     try {
-      const { authenticatedPerson } = jwt.verify(token, secret, { maxAge: expiration });
-      req.user = authenticatedPerson;
+      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      req.user = data;
     } catch {
       console.log('Invalid token');
     }

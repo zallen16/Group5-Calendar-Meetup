@@ -4,7 +4,14 @@ const typeDefs = `
     name: String
     email: String
     password: String
+    eventList:[Event]
+    friendList:[Friend]
 
+  }
+  type Friend{
+    _id:ID
+    name:String
+    email:String
   }
 
   type Event{
@@ -13,8 +20,7 @@ const typeDefs = `
     eventNotes: String
     eventStart: String
     eventEnd: String
-    enableNotification: Boolean
-    creatorId: ID!
+    enableNotification:Boolean
     privacySetting: String
   }
 
@@ -44,14 +50,11 @@ const typeDefs = `
       eventName: String!,
       eventNotes: String,
       eventStart: String!,
-      evenEnd: String,
-      enableNotification: Boolean,
-      privacySettings: String
+      eventEnd: String,
+      enableNotifications: Boolean,
+      privacySetting: String
     ): Event
-    addGuestList(
-      eventId: ID, 
-      guestList: [String]
-    ): Event
+    
     deleteEvent(eventId: ID): Event
 
     removeProfile(profileId: ID!): Profile

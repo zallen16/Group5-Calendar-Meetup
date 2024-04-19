@@ -1,4 +1,4 @@
-const { Profile } = require('../models');
+const { Profile,Event,} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -56,22 +56,23 @@ const resolvers = {
         return Profile.findOneAndDelete({ _id: profileId });
       }
     },
-    addEvent: async (parent, { eventName, eventNotes, eventEnd, enableNotification, privacySettings }) => {
+    addEvent: async (parent, { eventName, eventNotes,eventStart, eventEnd, enableNotifications, privacySetting },context) => {
+      //console.log(context.user)
       if (context.user) {
-        const event = await Event.create({ eventName, eventNotes, eventEnd, enableNotification, privacySettings });
+        const event = await Event.create({ eventName, eventNotes,eventStart, eventEnd, enableNotifications, privacySetting });
 
 
         return event;
       }
     },
-    addGuestList: async (parent, { eventID, guestList }) => {
-      if (context.user) {
-        const event = await Event.findOneAndUpdate({ _id: eventID }, { $push: { guestList } });
+    // addfriendList: async (parent, { eventID, Friend }) => {
+    //   if (context.user) {
+    //     const event = await Event.findOneAndUpdate({ _id: eventID }, { $push: { guestList } });
 
 
-        return event;
-      }
-    },
+    //     return event;
+    //   }
+    // },
     deleteEvent: async (parent, { eventId }, context) => {
       if (context.user) {
         return Event.findOneAndDelete({ _id: eventId });
