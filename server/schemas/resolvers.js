@@ -1,4 +1,4 @@
-const { Profile, Event, Notification } = require('../models');
+const { Profile,Event,} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
