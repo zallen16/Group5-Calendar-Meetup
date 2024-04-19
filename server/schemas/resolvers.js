@@ -56,30 +56,16 @@ const resolvers = {
         return Profile.findOneAndDelete({ _id: profileId });
       }
     },
-    addEvent: async (parent, { eventName, eventNotes,eventStart, eventEnd, enableNotifications, privacySetting },context) => {
-      //console.log(context.user)
+    addEvent: async (parent, { eventName, eventNotes, eventStart, eventEnd, enableNotifications, privacySetting }, context) => {
       if (context.user) {
-        const event = await Event.create({ eventName, eventNotes,eventStart, eventEnd, enableNotifications, privacySetting });
-
-
+        const event = await Event.create({ eventName, eventNotes, eventStart, eventEnd, enableNotifications, privacySetting });
         return event;
       }
     },
-    // addfriendList: async (parent, { eventID, Friend }) => {
-    //   if (context.user) {
-    //     const event = await Event.findOneAndUpdate({ _id: eventID }, { $push: { guestList } });
-
-
-    //     return event;
-    //   }
-    // },
     deleteEvent: async (parent, { eventId }, context) => {
       if (context.user) {
         return Event.findOneAndDelete({ _id: eventId });
       }
-
-
-
     },
   }
 };
