@@ -1,6 +1,20 @@
+
 /* @import 'react-big-calendar/lib/sass/styles'; */
 /* @import 'react-big-calendar/lib/addons/dragAndDrop/styles'; */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary: #232F3E;
+    --light: #fafafa;
+    --dark: #272f32;
+}
+
+.calender-container {
+    width: 50%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
