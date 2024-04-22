@@ -1,5 +1,11 @@
-/* @import 'react-big-calendar/lib/sass/styles';
-@import 'react-big-calendar/lib/addons/dragAndDrop/styles';  */
+
+/* @import 'react-big-calendar/lib/sass/styles'; */
+/* @import 'react-big-calendar/lib/addons/dragAndDrop/styles'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --primary: #232F3E;
     --light: #fafafa;
