@@ -1,4 +1,5 @@
 import MyCalendar from "../components/CalendarForm";
+import Navbar from "../components/navbar";
 // import Selectable from "../Events/selectable.jsx";
 
 import { Link } from "react-router-dom";
@@ -14,10 +15,7 @@ export default function Home() {
     ]
     return (
         <div className="calender-container">
-            <h1>Home Page</h1>
-            <Link to='./login'>
-                <button>Log in</button>
-            </Link>
+            <Navbar></Navbar>
             <MyCalendar myEventsList={events}/>
         </div>
     );

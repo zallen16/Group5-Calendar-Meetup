@@ -1,4 +1,6 @@
+
 const { Profile, Event } = require('../models');
+
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { setUpNotification } = require('../utils/notifications');
 const later = require('@breejs/later');
@@ -106,6 +108,28 @@ const resolvers = {
     saveSubscription: async (parent, {newSubscription}, context) => {
       if (context.user){
         return Profile.findOneAndUpdate({_id: context.user._id}, {subscription: newSubscription}, {new: true})
+      }
+    },
+    addFriend: async (parent, { friendId}, context) => {
+      if (context.user) {
+        // const friend = await Friend.create({name, email});
+        const profile=await Profile.findOneAndUpdate(
+          {_id:context.user._id},
+          {$addToSet:{friendList:friendId}},
+          {new:true,runValidators:true}
+        );
+        return profile;
+      }
+    },
+    removeFriend: async (parent, { friendId}, context) => {
+      if (context.user) {
+        // const friend = await Friend.create({name, email});
+        const profile=await Profile.findOneAndUpdate(
+          {_id:context.user._id},
+          {$pull:{friendList:friendId}},
+          {new:true,runValidators:true}
+        );
+        return profile;
       }
     },
   }
