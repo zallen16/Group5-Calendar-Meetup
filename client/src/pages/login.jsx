@@ -4,7 +4,6 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 
 import Auth from "../utils/auth";
-import Navbar from "../components/navbar";
 
 const Login = (props) => {
       const [formState, setFormState] = useState({ email: "", password: "" });
