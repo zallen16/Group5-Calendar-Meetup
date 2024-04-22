@@ -3,6 +3,7 @@ import { Calendar, dayjsLocalizer } from 'react-big-calendar'
 import { useState } from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 // import 'react-big-calendar/lib/addons/dragAndDrop/styles';
+import { deleteEvent } from '../Events/deleteEvent.jsx';
 
 
 const localizer = dayjsLocalizer(dayjs)
@@ -25,6 +26,10 @@ const MyCalendar = (props) => {
           title
         }
       ]);
+
+    const handleDeleteEvent = (eventId) => {
+      setEventsData(events.filter(event => event.id !== eventId));
+    };
   };
 
   return (
@@ -33,12 +38,15 @@ const MyCalendar = (props) => {
       onSelectEvent={(event) => alert(event.title)}
       onSelectSlot={handleSelect}
       localizer={localizer}
+      {...events.map(event => (
+      <deleteEvent key={event.id} id={event.id} title={event.title} onDelete={handleDeleteEvent} />
+      ))}
       selectable={true}
       events={eventsData}
       startAccessor="start"
       endAccessor="end"
       style={{ height: 500 }}
-    />
+      />
   </div>
 )}
 
