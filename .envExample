@@ -1,0 +1,3 @@
+JWT_SECRET = ""
+PUBLIC_KEY = ""
+PRIVATE_KEY = ""
