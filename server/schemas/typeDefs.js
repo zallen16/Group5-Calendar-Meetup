@@ -5,22 +5,16 @@ const typeDefs = `
     email: String
     password: String
     eventList:[Event]
-    friendList:[Friend]
+    friendList:[ID]
 
   }
-  type Friend{
-    _id:ID
-    name:String
-    email:String
-  }
-
   type Event{
     _id: ID
     eventName: String
     eventNotes: String
     eventStart: String
     eventEnd: String
-    enableNotification:Boolean
+    enableNotifications:Boolean
     privacySetting: String
   }
 
@@ -56,6 +50,8 @@ const typeDefs = `
     ): Event
     
     deleteEvent(eventId: ID): Event
+    addFriend(friendId:ID!):Profile
+    removeFriend(friendId:ID!):Profile
 
     removeProfile(profileId: ID!): Profile
   }
