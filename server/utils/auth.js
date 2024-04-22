@@ -1,9 +1,10 @@
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
+const path = require('path')
 
-require('dotenv').config();
-
+require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
 const secret = process.env.JWT_SECRET;
+console.log(secret);
 const expiration = '2h';
 
 module.exports = {

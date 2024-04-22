@@ -1,4 +1,15 @@
 const typeDefs = `
+  input SubscriptionInput {
+    endpoint: String
+    expirationTime: String
+    keys: Key
+  }
+
+  input Key {
+    p256dh: String
+    auth: String
+  }
+
   type Profile {
     _id: ID
     name: String
@@ -41,15 +52,16 @@ const typeDefs = `
     ): Auth
     addEvent(
       eventName: String!,
-      eventNotes: String,
+      eventNotes: String!,
       eventStart: String!,
-      eventEnd: String,
-      enableNotifications: Boolean,
-      privacySetting: String
+      eventEnd: String!,
+      enableNotifications: Boolean!,
+      privacySetting: String!
     ): Event
     deleteEvent(eventId: ID): Event
 
     removeProfile(profileId: ID!): Profile
+    saveSubscription(newSubscription: SubscriptionInput!): Profile
   }
 `;
 
