@@ -10,15 +10,14 @@ function Signup(props) {
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
-      const mutationResponse = await addUser({
+      const { data } = await addUser({
         variables: {
           email: formState.email,
           password: formState.password,
-          firstName: formState.firstName,
-          lastName: formState.lastName,
+          name: formState.firstName + " " + formState.lastName
         },
       });
-      const token = mutationResponse.data.addUser.token;
+      const token = data.addProfile.token;
       Auth.login(token);
     };
   
