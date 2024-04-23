@@ -27,8 +27,16 @@ const MyCalendar = (props) => {
       ]);
   };
 
+  const handleDelete = () => {
+    console.log('Delete clicked');
+  }
+
   return (
   <div>
+    <button 
+      onClick={handleDelete}
+      className={'delete-button'}>
+      {'DELETE'}</button>
     <Calendar
       onSelectEvent={(event) => alert(event.title)}
       onSelectSlot={handleSelect}
@@ -40,6 +48,7 @@ const MyCalendar = (props) => {
       style={{ height: 500 }}
     />
   </div>
+  
 )}
 
 export default MyCalendar;

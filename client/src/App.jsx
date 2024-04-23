@@ -8,7 +8,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import "react-big-calendar/lib/css/react-big-calendar.css";
-
+import Navbar from './components/navbar';
 import './App.css'
 
 // Construct our main GraphQL API endpoint
@@ -41,6 +41,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="">
         {/* <Header /> */}
+        <Navbar></Navbar>
         <main className="">
           <Outlet />
         </main>

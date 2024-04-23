@@ -33,7 +33,22 @@ const profileSchema = new Schema({
   ],
   subscription: {
     type: Object,
-  }
+    default: null
+  },
+  notificationList: [
+    {
+      eventId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Event'
+      },
+      schedule: {
+        type: Object
+      },
+      message: {
+        type: String
+      }
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
