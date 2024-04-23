@@ -1,0 +1,30 @@
+
+/* @import 'react-big-calendar/lib/sass/styles'; */
+/* @import 'react-big-calendar/lib/addons/dragAndDrop/styles'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #232F3E;
+    --light: #fafafa;
+    --dark: #272f32;
+}
+
+.calender-container {
+    width: 50%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-button {
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    background-color: #e6e6e6;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
