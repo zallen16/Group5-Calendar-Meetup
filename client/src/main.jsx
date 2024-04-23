@@ -7,6 +7,7 @@ import App from './App.jsx';
 import Home from './pages/home.jsx';
 import ErrorPage from './pages/error.jsx';
 import Login from './pages/login.jsx';
+import CreateEvent from './pages/createEvent.jsx';
 
 import Signup from './pages/signup.jsx';
 import './index.css';
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login />
+      },
+      {
+        path: '/CreateEvent',
+        element: <CreateEvent />
       },
     ],
   },

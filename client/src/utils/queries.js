@@ -1,20 +1,17 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_PROFILE = gql`
-query Profile {
+query {
   profile {
     _id
     name
     email
-    
   }
 }
 `;
 
-
-
 export const QUERY_EVENT = gql`
-query Event($eventId: ID) {
+query($eventId: ID) {
   event(eventId: $eventId) {
     _id
     eventName
@@ -26,15 +23,35 @@ query Event($eventId: ID) {
   }
 }
 `;
+
 export const QUERY_ALLEVENTS =gql `
-query Query {
+query{
   allevents {
     _id
     eventName
     eventNotes
     eventStart
     eventEnd
-    enableNotification
+    enableNotifications
+    privacySetting
+  }
+}
+`;
+
+export const QUERY_PROFILE_EVENTS = gql`
+query {
+  profile {
+    eventList {
+      _id
+    }
+  }
+  allevents {
+    _id
+    eventName
+    eventNotes
+    eventStart
+    eventEnd
+    enableNotifications
     privacySetting
   }
 }

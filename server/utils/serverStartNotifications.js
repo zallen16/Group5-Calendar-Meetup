@@ -3,7 +3,6 @@ const { setUpNotification } = require('../utils/notifications');
 
 async function main(){
     const notifications = await Profile.find({}, 'notificationList subscription -_id');
-    console.log(notifications);
     for (let i=0; i<notifications.length; i++){
         const subscription = notifications[i].subscription;
         if (!subscription) continue; //skips the current loop
