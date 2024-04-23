@@ -36,27 +36,25 @@ function Signup(props) {
           <form onSubmit={handleFormSubmit}>
             <div className="w-full px-6 py-3 mb-2 border border-slate-600 rounded-lg font-medium ">
               {/* <label htmlFor="firstName">First Name:</label> */}
-              <input
+              <input required 
                 placeholder="First Name"
                 name="firstName"
-                type="firstName"
                 id="firstName"
                 onChange={handleChange}
               />
             </div>
             <div className="w-full px-6 py-3 mb-2 border border-slate-600 rounded-lg font-medium ">
               {/* <label htmlFor="lastName">Last Name:</label> */}
-              <input
+              <input required 
                 placeholder="Last Name"
                 name="lastName"
-                type="lastName"
                 id="lastName"
                 onChange={handleChange}
               />
             </div>
             <div className="w-full px-6 py-3 mb-2 border border-slate-600 rounded-lg font-medium ">
               {/* <label htmlFor="email">Email:</label> */}
-              <input
+              <input required 
                 placeholder="Email"
                 name="email"
                 type="email"
@@ -66,7 +64,7 @@ function Signup(props) {
             </div>
             <div className="w-full px-6 py-3 mb-2 border border-slate-600 rounded-lg font-medium ">
               {/* <label htmlFor="pwd">Password:</label> */}
-              <input
+              <input required 
                 placeholder="Password"
                 name="password"
                 type="password"

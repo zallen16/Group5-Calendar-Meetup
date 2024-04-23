@@ -20,9 +20,10 @@ const resolvers = {
       }
     },
     allevents: async (parent,args,context) => {
-      if (context.user) {
-        return Event.find();
+      if (!context.user) {
+        return Event.find({privacySetting: "public"});
       }
+      return Event.find();
     },
 
     event: async (parent,{eventId}, context) => {
@@ -52,7 +53,7 @@ const resolvers = {
       if (!correctPw) {
         throw AuthenticationError;
       }
-
+      console.log("logged in")
       const token = signToken(profile);
       return { token, profile };
     },

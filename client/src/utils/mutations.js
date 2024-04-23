@@ -48,15 +48,15 @@ mutation($profileId: ID!) {
 `;
 
 export const ADD_EVENT = gql`
-  mutation ($eventName: String!, $eventStart: String!, $eventNotes: String, $eventEnd: String, $enableNotifications: Boolean, $privacySetting: String) {
-  addEvent(eventName: $eventName, eventStart: $eventStart, eventNotes: $eventNotes, eventEnd: $eventEnd, enableNotifications: $enableNotifications, privacySetting: $privacySetting) {
+mutation ($eventName: String!, $eventStart: String!, $eventEnd: String!, $eventNotes: String!, $enableNotifications: Boolean!, $privacySetting: String!){
+  addEvent(eventName: $eventName, eventStart: $eventStart, eventEnd: $eventEnd, eventNotes: $eventNotes, enableNotifications: $enableNotifications, privacySetting: $privacySetting, ) {
     _id
+    eventEnd
     eventName
     eventNotes
     eventStart
-    eventEnd
-    enableNotifications
     privacySetting
+    enableNotifications
   }
 }
 `;
