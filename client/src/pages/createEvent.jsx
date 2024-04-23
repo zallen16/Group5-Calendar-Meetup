@@ -28,7 +28,7 @@ function CreateEvent(props){
         },
       });
       if (data){
-        //window.location.assign('/');
+        window.location.assign('/');
       } else {
         console.error(error);
         window.alert(error.message);
